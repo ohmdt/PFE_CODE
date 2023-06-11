@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    }
+    <section></section>
+
+    <main id="main">
+
+        <div class="container">
+            <h1>Informations de l'utilisateur</h1>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th scope="row">Nom</th>
+                    <td>{{ utilisateur.user.get_full_name }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Age</th>
+                    <td>{{ utilisateur.age }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Poids</th>
+                    <td>{{ utilisateur.poids }}</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <h2>Tableau des informations</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">BMI</th>
+                    <th scope="col">Période d'activité</th>
+                    <th scope="col">Calories calculées</th>
+                    <th scope="col">Calories nécessaires</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{ utilisateur.bmi }}</td>
+                    <td>{{ utilisateur.activite }}</td>
+                    <td>{{ utilisateur.calories_calculees }}</td>
+                    <td>{{ utilisateur.calories_necessaires }}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="container">
+                <h2>Programme de la semaine</h2>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th class="sticky-col">Jour</th>
+                        <th>Programme d'entraînement</th>
+                        <th>Programme alimentaire</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for jour in jours_semaine %}
+                        <tr>
+                            <td class="sticky-col">{{ jour }}</td>
+                            <td>
+                                {% for programme in programme_semaine %}
+                                    {% if programme.jour == jour %}
+                                        {{ programme.programme_entrainement }}
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                            <td>
+                                {% for programme in programme_semaine %}
+                                    {% if programme.jour == jour %}
+                                        {{ programme.programme_alimentaire }}
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+            </table>
+            </table>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    </main>
+
+    <section></section>
+{% endblock %}
