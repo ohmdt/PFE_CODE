@@ -18,6 +18,9 @@ from django.contrib import admin
 from django.urls import path
 
 import main.views
+from django.contrib.auth import views as auth_views
+
+from PFE_CODE import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +29,6 @@ urlpatterns = [
     path('signup', main.views.signup, name="signup"),
     path('survey', main.views.survey, name="survey"),
     path('profile', main.views.profile, name="profile"),
+    path('logout/', auth_views.LogoutView.as_view(next_page="acceuil"), name='logout')
 
 ]

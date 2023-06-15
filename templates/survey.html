@@ -9,187 +9,122 @@
     <main id="main">
         <div class="row align-items-center">
             <div class="col"></div>
-            <div class="col card p-4 align-items-center" id="q1">
-                <h5 class="fw-bold mb-5">Question 1 of 6</h5>
-                <h3 class="mb-3">What do you want to do?</h3>
-                <label>
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><img src="{% static 'assets/icons/fire.svg' %}" height="34" width="48"
-                                                 class="me-4"/> <h4>Burn Fat</h4></div>
-                    </div>
-                </label>
-                <label class="mt-3">
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><img src="{% static 'assets/icons/muscle.svg' %}" height="34" width="48"
-                                                 class="me-4"/> <h4>Build Muscle</h4></div>
-                    </div>
-                </label>
-                <label class="mt-3">
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><img src="{% static 'assets/icons/fit-person.svg' %}" height="34" width="48"
-                                                 class="me-4"/> <h4>Be healthier</h4></div>
-                    </div>
-                </label>
+            <form class="col" method="post" action="{% url 'survey' %}">
+                {% csrf_token %}
+           
+                <div class="col card p-4 align-items-center" id="q1">
+                    <h5 class="fw-bold mb-5">Question 1 of 4</h5>
+                    <h3 class="mb-3">What do you want to do?</h3>
+                    <label>
+                        <input type="radio" name="goal" value="1" class="card-input-element d-none" id="demo1">
+                        <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
+                            <div class="d-flex"><img src="{% static 'assets/icons/fire.svg' %}" height="34" width="48"
+                                                    class="me-4"/> <h4>Burn Fat</h4></div>
+                        </div>
+                    </label>
+                    <label class="mt-3">
+                        <input type="radio" name="goal" value="2" class="card-input-element d-none" id="demo1">
+                        <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
+                            <div class="d-flex"><img src="{% static 'assets/icons/muscle.svg' %}" height="34" width="48"
+                                                    class="me-4"/> <h4>Build Muscle</h4></div>
+                        </div>
+                    </label>
+                    <label class="mt-3">
+                        <input type="radio" name="goal" value="3" class="card-input-element d-none" id="demo1">
+                        <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
+                            <div class="d-flex"><img src="{% static 'assets/icons/fit-person.svg' %}" height="34" width="48"
+                                                    class="me-4"/> <h4>Be healthier</h4></div>
+                        </div>
+                    </label>
 
-                <div class="d-flex mt-3 align-items-center justify-content-between">
-                    <button class="btn btn-outline-success" type="button" id="btn-continue-1">Continue</button>
-                </div>
+                    <div class="d-flex mt-3 align-items-center justify-content-between">
+                        <button class="btn btn-outline-success" type="button" id="btn-continue-1">Continue</button>
+                    </div>
 
-            </div>
-            <div class="col card p-4 align-items-center" style="display: none" id="q2">
-                <h5 class="fw-bold mb-5">Question 2 of 6</h5>
-                <h3 class="mb-3">How long do you want it to take?</h3>
-                <label>
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><h4>1 month</h4></div>
-                    </div>
-                </label>
-                <label class="mt-3">
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><h4>2 months</h4></div>
-                    </div>
-                </label>
-                <label class="mt-3">
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><h4>3 months</h4></div>
-                    </div>
-                </label>
-                <label class="mt-3">
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><h4>4 months</h4></div>
-                    </div>
-                </label>
-                <label class="mt-3">
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><h4>5+ months</h4></div>
-                    </div>
-                </label>
-                <div class="d-flex mt-3 align-items-center justify-content-between">
-                    <button class="btn btn-outline-success" type="button" id="btn-continue-2">Continue</button>
                 </div>
-            </div>
-            <div class="col card p-4 align-items-center" style="display: none" id="q3">
-                <h5 class="fw-bold mb-5">Question 3 of 6</h5>
-                <h3 class="mb-3">What is your sex ?</h3>
-                <label>
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><img src="{% static 'assets/icons/male.svg' %}" height="34" width="48"
-                                                 class="me-4"/> <h4>Male</h4></div>
-                    </div>
-                </label>
-                <label class="mt-3">
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><img src="{% static 'assets/icons/female.svg' %}" height="34" width="48"
-                                                 class="me-4"/> <h4>Female</h4></div>
-                    </div>
-                </label>
+                
+                <div class="col card p-4 align-items-center" style="display: none" id="q2">
+                    <h5 class="fw-bold mb-5">Question 2 of 4</h5>
+                    <h3 class="mb-3">What is your sex ?</h3>
+                    <label>
+                        <input type="radio" name="gender" value="male" class="card-input-element d-none" id="demo1">
+                        <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
+                            <div class="d-flex"><img src="{% static 'assets/icons/male.svg' %}" height="34" width="48"
+                                                    class="me-4"/> <h4>Male</h4></div>
+                        </div>
+                    </label>
+                    <label class="mt-3">
+                        <input type="radio" name="gender" value="female" class="card-input-element d-none" id="demo1">
+                        <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
+                            <div class="d-flex"><img src="{% static 'assets/icons/female.svg' %}" height="34" width="48"
+                                                    class="me-4"/> <h4>Female</h4></div>
+                        </div>
+                    </label>
 
-                <div class="d-flex mt-3 align-items-center justify-content-between">
-                    <button class="btn btn-outline-success" type="button" id="btn-continue-3">Continue</button>
-                </div>
+                    <div class="d-flex mt-3 align-items-center justify-content-between">
+                        <button class="btn btn-outline-success" type="button" id="btn-continue-2">Continue</button>
+                    </div>
 
-            </div>
-            <div class="col card p-4 align-items-center" style="display: none" id="q4">
-                <h5 class="fw-bold mb-5">Question 4 of 6</h5>
-                <h3 class="mb-3">What is your body type ?</h3>
-                <label>
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><h4>Triangle</h4></div>
-                    </div>
-                </label>
-                <label class="mt-3">
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><h4>Inverted Triangle</h4></div>
-                    </div>
-                </label>
-                <label class="mt-3">
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><h4>Rectangle</h4></div>
-                    </div>
-                </label>
-                <label class="mt-3">
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><h4>Oval</h4></div>
-                    </div>
-                </label>
+                </div>
+                <div class="col card p-4 align-items-center" style="display: none" id="q3">
+                    <h5 class="fw-bold mb-5">Question 3 of 4</h5>
+                    <h3 class="mb-3">What's your overall activity level?</h3>
+                    <label>
+                        <input type="radio" name="activity_level" value="1" class="card-input-element d-none" id="demo1">
+                        <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
+                            <div class="d-flex"><img src="{% static 'assets/icons/low-activity.svg' %}" height="34"
+                                                    width="48" class="me-4"/> <h4>Low</h4></div>
+                        </div>
+                    </label>
+                    <label class="mt-3">
+                        <input type="radio" name="activity_level" value="2" class="card-input-element d-none" id="demo1">
+                        <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
+                            <div class="d-flex"><img src="{% static 'assets/icons/moderate-activity.svg' %}" height="34"
+                                                    width="48" class="me-4"/> <h4>Moderate</h4></div>
+                        </div>
+                    </label>
+                    <label class="mt-3">
+                        <input type="radio" name="activity_level" value="3" class="card-input-element d-none" id="demo1">
+                        <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
+                            <div class="d-flex"><img src="{% static 'assets/icons/high-activity.svg' %}" height="34"
+                                                    width="48" class="me-4"/> <h4>High</h4></div>
+                        </div>
+                    </label>
+                    <label class="mt-3">
+                        <input type="radio" name="activity_level" value="4" class="card-input-element d-none" id="demo1">
+                        <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
+                            <div class="d-flex"><img src="{% static 'assets/icons/very-high-activity.svg' %}" height="34"
+                                                    width="48" class="me-4"/> <h4>Very High</h4></div>
+                        </div>
+                    </label>
 
-                <div class="d-flex mt-3 align-items-center justify-content-between">
-                    <button class="btn btn-outline-success" type="button" id="btn-continue-4">Continue</button>
-                </div>
-
-            </div>
-            <div class="col card p-4 align-items-center" style="display: none" id="q5">
-                <h5 class="fw-bold mb-5">Question 5 of 6</h5>
-                <h3 class="mb-3">What's your overall activity level?</h3>
-                <label>
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><img src="{% static 'assets/icons/low-activity.svg' %}" height="34"
-                                                 width="48" class="me-4"/> <h4>Low</h4></div>
+                    <div class="d-flex mt-3 align-items-center justify-content-between">
+                        <button class="btn btn-outline-success" type="button" id="btn-continue-3">Continue</button>
                     </div>
-                </label>
-                <label class="mt-3">
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><img src="{% static 'assets/icons/moderate-activity.svg' %}" height="34"
-                                                 width="48" class="me-4"/> <h4>Moderate</h4></div>
-                    </div>
-                </label>
-                <label class="mt-3">
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><img src="{% static 'assets/icons/high-activity.svg' %}" height="34"
-                                                 width="48" class="me-4"/> <h4>High</h4></div>
-                    </div>
-                </label>
-                <label class="mt-3">
-                    <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                    <div class="text-black fw-bold card card-body bg-light d-flex justify-content-between flex-row align-items-center">
-                        <div class="d-flex"><img src="{% static 'assets/icons/very-high-activity.svg' %}" height="34"
-                                                 width="48" class="me-4"/> <h4>Very High</h4></div>
-                    </div>
-                </label>
 
-                <div class="d-flex mt-3 align-items-center justify-content-between">
-                    <button class="btn btn-outline-success" type="button" id="btn-continue-5">Continue</button>
                 </div>
+                <div class="col card p-4 " style="display: none" id="q4">
+                    <h5 class="fw-bold mb-5">Question 4 of 4</h5>
+                    <h3 class="mb-3">What's your height, weight, and Age?
+                    </h3>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Height </label>
+                        <input type="number" name="height"  min="130" max="230" class="form-control" id="formGroupExampleInput" placeholder="your height on Cm">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Weight</label>
+                        <input type="number" name="weight" min="40" max="160" class="form-control" id="formGroupExampleInput2" placeholder="your Weight on Kg">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Age</label>
+                        <input type="number" name="age" min="14" max="80" class="form-control" id="formGroupExampleInput2" placeholder="  ">
+                    </div>
+                    <div class="d-flex mt-3 align-items-center justify-content-between">
+                        <button class="btn btn-outline-success" type="submit" id="btn-continue-6">submit</button>
+                    </div>
 
-            </div>
-            <div class="col card p-4 " style="display: none" id="q6">
-                <h5 class="fw-bold mb-5">Question 6 of 6</h5>
-                <h3 class="mb-3">What's your height, weight, and Age?
-                </h3>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Height </label>
-                    <input type="number" min="100" max="250" class="form-control" id="formGroupExampleInput" placeholder="Example input">
                 </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">Weight</label>
-                    <input type="number" min="20" max="400" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput2">Age</label>
-                    <input type="number" min="14" max="80" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                </div>
-                <div class="d-flex mt-3 align-items-center justify-content-between">
-                    <button class="btn btn-outline-success" type="button" id="btn-continue-6">Continue</button>
-                </div>
-
-            </div>
+            </form>
             <div class="col"></div>
         </div>
 
@@ -212,14 +147,7 @@
             $("#q3").hide();
             $("#q4").show();
         })
-        $("#btn-continue-4").on("click", function () {
-            $("#q4").hide();
-            $("#q5").show();
-        })
-        $("#btn-continue-5").on("click", function () {
-            $("#q5").hide();
-            $("#q6").show();
-        })
+       
 
     </script>
 

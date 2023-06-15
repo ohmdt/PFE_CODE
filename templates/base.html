@@ -53,7 +53,12 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">Features</a></li>
+            {% if request.user.is_anonymous %}
           <li><a class="getstarted scrollto" href="{% url 'survey' %}">Get Started</a></li>
+            {% else %}
+                <li><a class="getstarted scrollto" href="{% url 'profile' %}">Welcome {{  request.user.first_name }}!</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'logout' %}">logout</a></li>
+            {% endif %}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
